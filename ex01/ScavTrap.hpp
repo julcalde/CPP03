@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 20:05:50 by julcalde          #+#    #+#             */
-/*   Updated: 2025/08/17 14:46:36 by julcalde         ###   ########.fr       */
+/*   Created: 2025/08/17 14:28:51 by julcalde          #+#    #+#             */
+/*   Updated: 2025/08/17 14:46:48 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+#include <string>
+
+class ScavTrap : public ClapTrap
 {
-	ScavTrap scav("Scavenger");
-	scav.attack("Yuumi");
-	scav.takeDamage(30);
-	scav.beRepaired(20);
-	scav.guardGate();
-	scav.takeDamage(100); // should show 0 HP
-	scav.attack("Yuumi"); // should fail
-	return (0);
-}
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& other);
+		ScavTrap& operator=(const ScavTrap& other);
+		~ScavTrap();
+
+		void attack(const std::string& target);
+		void guardGate(); // to set ScavTrap in Gate Keeper mode
+};
+
+#endif

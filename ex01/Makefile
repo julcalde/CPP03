@@ -11,6 +11,7 @@ SRCS =		main.cpp \
 OBJS =		$(SRCS:.cpp=.o)
 
 HEADERS =	ClapTrap.hpp
+			ScavTrap.hpp
 
 # ANSI color codes
 YELLOW = \033[1;33m

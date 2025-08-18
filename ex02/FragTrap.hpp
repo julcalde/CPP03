@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 20:05:50 by julcalde          #+#    #+#             */
-/*   Updated: 2025/08/18 12:11:29 by julcalde         ###   ########.fr       */
+/*   Created: 2025/08/18 11:58:49 by julcalde          #+#    #+#             */
+/*   Updated: 2025/08/18 12:00:53 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main(void)
+#include "ClapTrap.hpp"
+#include <string>
+
+class FragTrap : public ClapTrap
 {
-	FragTrap frag("Fragola");
-    frag.attack("Lux");
-    frag.takeDamage(40);
-    frag.beRepaired(25);
-    frag.highFivesGuys();
-    frag.takeDamage(100); // Should show 0 hit points
-    frag.attack("Lux"); // Should fail
-    return 0;
-}
+	public:
+		FragTrap(std::string name);
+		FragTrap(const FragTrap& other);
+		FragTrap& operator=(const FragTrap& other);
+		~FragTrap();
+
+		void attack(const std::string& target);
+		void highFivesGuys();
+};
+
+#endif

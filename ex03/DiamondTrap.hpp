@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/16 20:05:50 by julcalde          #+#    #+#             */
-/*   Updated: 2025/08/18 12:55:09 by julcalde         ###   ########.fr       */
+/*   Created: 2025/08/18 12:34:35 by julcalde          #+#    #+#             */
+/*   Updated: 2025/08/18 12:43:52 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
+
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-int main(void)
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	FragTrap frag("Fragola");
-    frag.attack("Lux");
-    frag.takeDamage(40);
-    frag.beRepaired(25);
-    frag.highFivesGuys();
-    frag.takeDamage(100); // Should show 0 hit points
-    frag.attack("Lux"); // Should fail
-    return (0);
-}
+	private:
+		std::string _name;
+		
+	public:
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap& other);
+		DiamondTrap& operator=(const DiamondTrap& other);
+		~DiamondTrap();
+
+		void whoAmI();
+		using ScavTrap::attack; // to explicitly use ScavTrap's attack method
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:34:39 by julcalde          #+#    #+#             */
-/*   Updated: 2025/08/18 13:24:49 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/08/18 15:01:35 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 DiamondTrap::DiamondTrap(std::string name)
-    : ClapTrap(name + " the cheeks clapper"), ScavTrap(name), FragTrap(name), _name(name)
+    : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
 {
     _hitPoints = FragTrap::_hitPoints; // 100
     _energyPoints = ScavTrap::_energyPoints; // 50

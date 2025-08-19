@@ -10,7 +10,7 @@ SRCS =		main.cpp \
 
 OBJS =		$(SRCS:.cpp=.o)
 
-HEADERS =	ClapTrap.hpp
+HEADERS =	ClapTrap.hpp \
 			ScavTrap.hpp
 
 # ANSI color codes

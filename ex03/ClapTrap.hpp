@@ -6,7 +6,7 @@
 /*   By: julcalde <julcalde@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 20:05:47 by julcalde          #+#    #+#             */
-/*   Updated: 2025/08/18 12:35:22 by julcalde         ###   ########.fr       */
+/*   Updated: 2025/08/19 13:22:36 by julcalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ClapTrap
 		void takeDamage(unsigned int amount); // reduces own HP
 		void beRepaired(unsigned int amount); // increases HP, costs 1 EP
 
-		std::string getName() const {return (_name);}
+		std::string getName() const;
 };
 
 #endif
